@@ -85,12 +85,7 @@ export default{
 									"id":"411",
 									"name":"tab",
 									"path":"/tab"
-								},
-								{
-									"id":"412",
-									"name":"tabAdd",
-									"path":""
-								},
+								}
 							]
 						}
 					]

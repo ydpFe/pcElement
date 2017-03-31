@@ -10,13 +10,14 @@
 			<!--设置面包屑 end-->
 			<!-- ibox-center -->
 			<div class="ibox-center">
-                <el-button size="small" @click="addTab(editableTabsValue2)">增加 tab</el-button>
+                <el-button @click="addTab(editableTabsValue2)" type="primary">增加 tab</el-button>
+                <div class="line-style"></div>
                 <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab">
-                    <el-tab-pane v-for="(item, index) in editableTabs2" :label="item.title" :name="item.name">
-                        <!-- 
+                    <el-tab-pane v-for="(item, index) in editableTabs2" :label="item.title" :name="item.id">
+                        
                         <component v-bind:is="item.content">
                         </component>
-                        -->
+                        
                     </el-tab-pane>
                 </el-tabs>
 			</div>
@@ -26,27 +27,36 @@
 </template>
 
 <script>
-import others from '../others/others.vue';//导航组件
+import formObj  from '../form/form.vue';
+import others from '../others/others.vue';
+import tableObj from '../tableShow/tableShow.vue';
 export default{
     components: {
-        "others": others,
+        'others': others,
+        'formObj':formObj,
+        'tableObj':tableObj
     },
 	data(){
 		return{
-            editableTabsValue2: '2',
+            editableTabsValue2: '1',//默认开启窗口
             editableTabs2: [
                 {
-                    title: 'Tab 1',
-                    name: '1',
-                    content: 'others'
+                    title: '其他组件tab',
+                    id: '1',
+                    content: formObj
                 }, 
                 {
-                    title: 'Tab 2',
-                    name: '2',
-                    content: 'Tab 2 content'
+                    title: '表单组件tab',
+                    id: '2',
+                    content: others
+                }
+                ,{
+                    title: '表格组件tab',
+                    id: '3',
+                    content: tableObj
                 }
             ],
-            tabIndex: 2
+            tabIndex:4//新建窗口name起始值
 		}
 	},
 	mounted(){
@@ -56,9 +66,9 @@ export default{
         addTab(targetName) {
         let newTabName = ++this.tabIndex + '';
         this.editableTabs2.push({
-          title: 'New Tab',
-          name: newTabName,
-          content: 'New Tab content'
+          title: '新的窗口',
+          id: newTabName,
+          content: tableObj
         });
         this.editableTabsValue2 = newTabName;
       },
@@ -67,17 +77,17 @@ export default{
         let activeName = this.editableTabsValue2;
         if (activeName === targetName) {
           tabs.forEach((tab, index) => {
-            if (tab.name === targetName) {
+            if (tab.id === targetName) {
               let nextTab = tabs[index + 1] || tabs[index - 1];
               if (nextTab) {
-                activeName = nextTab.name;
+                activeName = nextTab.id;
               }
             }
           });
         }
         
         this.editableTabsValue2 = activeName;
-        this.editableTabs2 = tabs.filter(tab => tab.name !== targetName);
+        this.editableTabs2 = tabs.filter(tab => tab.id !== targetName);
       }
 	}
 }
