@@ -7,8 +7,8 @@
 ├── src: 开发环境
 |   ├── assets          图片文件目录
 |   ├── component       组件目录
-|   ├── directives      自定义指令
 |   ├── router          路由配置
+|   ├── page            页面组件
 |   ├── styles          scss文件
 |   ├── vuex            vuex管理
 |   ├── App.vue         根组件
@@ -21,13 +21,9 @@
 └── webpack.config.js   webpack配置文件
 ```
 
-规范
+# 规范
 
 使用webpack打包 jsDoc规范
-
-# 展示
-
-demo地址：https://ydpfe.github.io/#/
 
 # 安装依赖
 npm install
@@ -42,8 +38,3 @@ npm run dev
 
 # 建立生产与压缩资源
 npm run build
-
-
-<!-- 备注记录 -->
-encodeURIComponent()   	中文编码
-decodeURIComponent()	中文解码
