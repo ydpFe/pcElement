@@ -3,11 +3,11 @@ body, ul, li, ol, li, dl, dt, dd, form, h1, h2, h3, h4, p, hr, tabel, tr, td, se
 	padding: 0;
 	box-sizing: border-box;
 }
-body { background: #f1f1f1; font-size:14px; }
+body { background: #324157; font-size:14px; }
 img { border: 0 none; vertical-align: top;}
-a { text-decoration: none; outline: none; hide-focus: expression(this.hideFocus=true);}
+a { text-decoration: none; outline: none;}
 li { list-style: none; vertical-align:top;}
-input{ font-size: 0.14rem; border: 0; background: none; float: left; outline: none; }
+// input{ font-size: 0.14rem; border: 0; background: none; float: left; outline: none; }
 ::-webkit-input-placeholder { color: #999; }
 
 .clear{ zoom: 1;}
@@ -15,14 +15,34 @@ input{ font-size: 0.14rem; border: 0; background: none; float: left; outline: no
 .fl{ float:left;}
 .fr{ float:right;}
 .fx{ display:flex;}
-h1{
-	display: block;
-	padding-bottom:5px;
-	border-bottom: 1px #333 dotted;
+.fi{
+	display: inline-block;
 }
-h3{
-	color:#787373;
-	padding:15px 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 100;
+}
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 16px;
+}
+h4 {
+  font-size: 14px;
+}
+h5 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 10px;
 }
 /* 元件 */
 .u-submit_btn {
@@ -80,4 +100,23 @@ h3{
     flex: 1;
     align-items: center;
     justify-content: center;
+}
+/*页面公共css*/
+.ibox{
+    margin: 0;
+    padding: 0;
+		height:48px;
+		line-height:48px!important;
+		font-size:14px!important;
+		border-top: 3px #e7eaec solid;
+		border-bottom: 1px #e7eaec solid;
+}
+.ibox-center{
+	padding: 15px 20px 20px 20px;
+}
+/*一条线*/
+.line-style{
+	height:1px;
+	background: #e7eaec;
+	margin:10px 0;
 }

@@ -1,15 +1,18 @@
 "use strict";
-import Vue      from 'vue'
-import Router   from 'vue-router'
-
-const typeWriterPage = r => require.ensure([], () => r(require('../page/typeWriterPage.vue')), 'typeWriterPage')
-const dropDownMenu = r => require.ensure([], () => r(require('../component/dropDownMenu.vue')), 'dropDownMenu')
+import Vue      from 'vue';
+import Router   from 'vue-router';
+//异步组件
+const form = r => require.ensure([], () => r(require('../page/form/form.vue')), 'form');
+const tableShow = r => require.ensure([], () => r(require('../page/tableShow/tableShow.vue')), 'tableShow');
+const others = r => require.ensure([], () => r(require('../page/others/others.vue')), 'others');
+const tab = r => require.ensure([], () => r(require('../page/tab/tab.vue')), 'tab');
 Vue.use(Router)
-
 export default new Router({
   // mode: 'history',
   routes: [
-    { path: "/", component: typeWriterPage, name:'typeWriterPage' , meta: {title: "打字机效果"}}
-	// { path: "*", component: error, name:'error' , meta: {title: "404"}}
+    { path: "/", component: form, name:'form' , meta: {title: "表单组件"}},
+    { path: "/others", component: others, name:'others' , meta: {title: "其他组件"}},
+	  { path: "/table", component: tableShow, name:'table' , meta: {title: "表格"}},
+    { path: "/tab", component: tab, name:'tab' , meta: {title: "tab"}},
   ]
 })

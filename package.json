@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
-    "element-ui": "^1.2.4",
+    "element-ui": "^1.2.7",
     "vue": "^2.1.0"
   },
   "devDependencies": {
