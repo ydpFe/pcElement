@@ -21,9 +21,9 @@
 └── webpack.config.js   webpack配置文件
 ```
 
-# 规范
+# 展示
 
-使用webpack打包 jsDoc规范
+https://ydpfe.github.io/#/
 
 # 安装依赖
 npm install
